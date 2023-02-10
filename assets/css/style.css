@@ -1,0 +1,605 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* コピペ */
+/*メニューの形*/
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color:black;
+    border:1px solid #ffffff;
+}
+
+/*メニューの白い三本線*/
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+/* 上の白線の場所を指定している */
+.menu-btn span:before {
+    bottom: 8px;
+}
+/* 下の白線の場所を指定している */
+.menu-btn span:after {
+    top: 8px;
+}
+/**/
+/* コピペ */
+/*メニューを押したときに×に変わる時のエフェクト*/
+/*真ん中の白線を見えなくしている*/
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: black;/*メニューオープン時は真ん中の線を透明にする*/
+}
+/*上の白線を時計回りに45度回す*/
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+/*下の白線を半時計回りに45度回す*/
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* コピペ */
+/*謎*/
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: white;
+}
+/*メニューのパディング*/
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+/*メニューの開いたときの白線*/
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+/*liのそれぞれの色や文字の大きさの設定*/
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    color:black;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+/*メニュー開いた時の＞*/
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+/* コピペ */
+/*×ボタンを押した際のメニューの反応*/
+.menu-content {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: gray;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+/* コピペ */
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
+}
+/* コピペ */
+#menu-btn-check {
+    display: none;
+}
+
+
+
+
+
+
+
+.mainHeader{
+    background-color: black;
+    width: 100%;
+    height: 80px; /*imgと同じピクセル */
+    color: black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: fixed;
+    z-index: 20;
+}
+.rightHeader{
+    width: 40%;
+    position: relative;
+    left: 100px;
+    color: white;
+}
+.leftHeader{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 120px;
+    height: 60px;
+    color: white;
+}
+.headerImg {
+    width: 120px;
+    height: 60px;
+}
+body{
+    font-family: '游明朝','Yu Mincho';
+    background-image: url(/assets/img/background4.jpg);
+    background-size: 100%;
+    background-repeat: none;
+    background-size: contain;
+    /* background-color: gray;
+    background: linear-gradient(90deg, #F0F2F0, #424242); */
+}
+h2 {
+    color: #fff;
+}
+.top-view {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}
+@media screen and (max-width: 824px) {
+    .top-view {
+        padding-top: 0;
+        position: relative;
+        top: 80px;
+        margin-bottom: 10%;
+    }
+    
+}
+.top-view-img {
+    width: 80%;
+}
+.passage-title {
+    color: #ffffff;
+    /* border: 1px solid red; */
+    text-align: center;
+    margin: 5% 10%;
+    background-color: #565656;
+}
+@media screen and (max-width: 824px) {
+    .passage-title {
+        margin-top: 21%;
+        margin-bottom: -5%;
+    }
+    
+}
+
+.flame-size {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.flame {
+    background-color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10%;
+}
+@media screen and (max-width: 824px) {
+    .flame {
+        margin-top: 10%;
+    }
+    
+}
+.font-size {
+    width: 50%;
+}
+.img-size {
+    width: 180px;
+}
+
+.text-line-right{
+	display: flex;
+	align-items: center;
+    width: 80%;
+    padding: 5%;
+}
+
+.text-line-right:after {
+	content: "";
+	flex-grow: 1;
+	height: 1px;
+	display: block;
+
+}
+
+.text-line-right:after {
+	margin-left: .4em;
+	background: black;
+}
+
+/* .h3-title {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    text-align: center;
+    justify-content: center;
+    margin: 0 10%;
+    border: 3px solid black;
+    z-index: 30;
+    position: relative;
+    top:70px;
+
+}
+.title-pos1 {
+    border: 2px solid black;
+}
+.title-pos2 {
+    border: 2px solid black;
+}
+.title-pos3 {
+    border: 2px solid black;
+}
+.li-line {
+    display: flex;
+    max-width: 80%;
+    background-color: #ffffff;
+    margin-left: 10%;
+}
+.li-size {
+    position: relative;
+    width: 100%;
+    padding-top: 30.25%;
+    動画を少し左から右にずらしてる
+    padding-left: 7%;
+}
+.li-img {
+    position: absolute;
+    top: 35%;
+    width: 64%;
+    height: 36%;
+} */
+
+.total-title {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+.h3-title {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    text-align: center;
+    justify-content: center;
+    margin: 0 10%;
+    border: 3px solid black;
+    z-index: 30;
+    position: relative;
+    top:70px;
+
+}
+.title-pos1 {
+    border: 2px solid black;
+}
+.title-pos2 {
+    border: 2px solid black;
+}
+.title-pos3 {
+    border: 2px solid black;
+}
+.li-line {
+    display: flex;
+    /* max-width: 80%; */
+    background-color: #ffffff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+@media  screen and (max-width: 780px){
+    .li-line {
+        flex-direction: column;
+        background-color: #565656;
+    }
+}
+
+.center {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+}
+/* @media  screen and (max-width: 780px){
+    .center {
+        margin: 5% 0;
+    }
+} */
+.li-size {
+    padding: 5% 0;
+}
+@media  screen and (max-width: 780px){
+    .title-pos1 ,.title-pos2 ,.title-pos3 {
+        margin-bottom: 5%;
+        background-color: #ffffff;
+    }
+}
+
+
+
+
+
+/*ポジションとはみ出た部分を隠している*/
+.slideshow {
+	position: relative;
+	overflow: hidden;
+}
+/*入力欄コントロールの名前。名前/値の組の部分としてフォームと一緒に送信される*/
+input[name="slideshow"] {
+	display: none;
+}
+
+/* :::::: slideContents :::::: */
+/**/
+.slideContents {
+	display: flex;
+	position: relative;
+	width: 500%;
+	background: black;
+	text-align: center;
+    /*サファリで動くようにナンにしている*/
+	-webkit-user-select: none;
+    /*キーワード値*/
+	user-select: none;
+    /*時間が*/
+	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.slideContents section {
+	width: 20%;
+}
+/* .slideContents section img {
+	max-width: 100%;
+	height: auto;
+	padding: 0 50px;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+@media (min-width: 520px) {
+	.slideContents section img {
+		aspect-ratio: 3 / 1;
+		object-fit: cover;
+	}
+} */
+
+/* :::::: arrows :::::: */
+.arrow,
+.arrow label,
+.arrow .ico {
+	position: absolute;
+}
+.arrow {
+	top: 0;
+	margin: 0;
+	transition: background .3s;
+}
+.prev {
+	left: 0;
+}
+.next {
+	right: 0;
+}
+.arrow:hover {
+	background: rgba(255,255,255,.2);
+}
+@media screen and(max-width:780px) {
+    .arrow{
+        background-color: #565656;
+    }
+}
+.arrow,
+.arrow label {
+	cursor: pointer;
+	width: 50px;
+	height: 100%;
+}
+.arrow label {
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+/*選択する時の左右についているアイコン*/
+.arrow .ico {
+	top: calc(50% - 6px);
+	width: 12px;
+	height: 12px;
+	border-top: 3px solid #fff;
+	opacity: 0;
+}
+
+.prev .ico {
+	left: 50%;
+	border-left: 3px solid #fff;
+	transform: rotate(-45deg);
+	transition: left .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+}
+.next .ico {
+	right: 50%;
+	border-right: 3px solid #fff;
+	transform: rotate(45deg);
+	transition: right .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+}
+.arrow:hover .ico {
+	opacity: .6;
+}
+.prev:hover .ico {
+	left: calc(50% - 6px);
+}
+.next:hover .ico {
+	right: calc(50% - 6px);
+}
+
+
+
+#switch1:checked ~ .slideContents {
+	transform: translateX(0);
+}
+#switch2:checked ~ .slideContents {
+	transform: translateX(-20%);
+}
+#switch3:checked ~ .slideContents {
+	transform: translateX(-40%);
+}
+#switch4:checked ~ .slideContents {
+	transform: translateX(-60%);
+}
+#switch5:checked ~ .slideContents {
+	transform: translateX(-80%);
+}
+
+/* :::::: arrow mechanism :::::: */
+.arrow label {
+	pointer-events: none;
+}
+#switch1:checked ~ .prev label[for="switch5"],
+#switch2:checked ~ .prev label[for="switch1"],
+#switch3:checked ~ .prev label[for="switch2"],
+#switch4:checked ~ .prev label[for="switch3"],
+#switch5:checked ~ .prev label[for="switch4"],
+#switch1:checked ~ .next label[for="switch2"],
+#switch2:checked ~ .next label[for="switch3"],
+#switch3:checked ~ .next label[for="switch4"],
+#switch4:checked ~ .next label[for="switch5"],
+#switch5:checked ~ .next label[for="switch1"] {
+	pointer-events: auto;
+}
+
+.introduce {
+    color: black;
+    background-color: #ffffff;
+    margin: 0 10%;
+    margin-bottom: 5%;
+    padding: 5% 0;
+}
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+    margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin: 0 auto;}
+
+ /* @media screen and(width-max: 780px) {
+    .tabs{
+        width: 60%;
+    }
+        
+} */
+  
+  /*タブのスタイル*/
+  .tab_item {
+    width: calc(100%/3);
+    height: 50px;
+    border-bottom: 3px solid black;
+    background-color: #d9d9d9;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    color: #565656;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  .tab_item:hover {
+    opacity: 0.75;
+  }
+  
+  /*ラジオボタンを全て消す*/
+  input[name="tab_item"] {
+    display: none;
+  }
+  
+  /*タブ切り替えの中身のスタイル*/
+  .tab_content {
+    display: none;
+    padding: 5% 10% 0;
+    clear: both;
+    overflow: hidden;
+  }
+
+  @media screen and(width-max: 780px) {
+    .tab_item{
+        width: 60%;
+        background-color: #565656;
+    }
+        
+} 
+  
+  /*選択されているタブのコンテンツのみを表示*/
+  #all:checked ~ #all_content,
+  #programming:checked ~ #programming_content,
+  #design:checked ~ #design_content {
+    display: block;
+  }
+  
+  /*選択されているタブのスタイルを変える*/
+  .tabs input:checked + .tab_item {
+    background-color: black;
+    color: #fff;
+  }
+
+
+
+
+
+
+
+
+ 
+.copy {
+    content:"\00A9";
+    color: #565656;
+    text-align: center;
+    background-color: #ffffff;
+    margin-top: 10%;
+}
+p {
+    /*行間の高さの操作*/
+    line-height: 2;
+}
